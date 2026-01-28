@@ -2,56 +2,23 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Vídeo surpresa 😈</title>
-
-  <style>
-    body {
-      margin: 0;
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-
-    button {
-      font-size: 20px;
-      padding: 15px 30px;
-      cursor: pointer;
-      border: none;
-      border-radius: 10px;
-      background: red;
-      color: white;
-    }
-
-    video {
-      display: none;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  </style>
+  <title>Ativar som</title>
 </head>
+<body style="background:black; text-align:center; padding-top:40vh;">
 
-<body>
+  <button onclick="playVideo()" style="font-size:22px; padding:15px;">
+    ▶️ Ativar som
+  </button>
 
-  <button onclick="playVideo()">Iniciar vídeo</button>
+  <br><br>
 
-  <video id="v" playsinline>
+  <video id="v" width="80%" playsinline>
     <source src="video/jumpscare.mp4#t=11" type="video/mp4">
-    Seu navegador não suporta vídeo.
   </video>
 
   <script>
     function playVideo() {
       const v = document.getElementById('v');
-
-      document.querySelector('button').style.display = 'none';
-      v.style.display = 'block';
-
       v.muted = false;
       v.volume = 1.0;
       v.play();
