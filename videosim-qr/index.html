@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Conteúdo</title>
+
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    video {
+      display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    button {
+      font-size: 22px;
+      padding: 15px 30px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button id="btn" onclick="playVideo()">▶️ Clique para continuar</button>
+
+  <video id="v" playsinline muted>
+    <source src="video/musica.mp4" type="video/mp4">
+  </video>
+
+  <script>
+    function playVideo() {
+      const v = document.getElementById('v');
+      const btn = document.getElementById('btn');
+
+      btn.style.display = 'none';
+      v.style.display = 'block';
+
+      v.currentTime = 1;   // começa no segundo 11
+      v.muted = false;     // libera o som
+      v.volume = 1.0;
+      v.play();
+    }
+  </script>
+
+</body>
+</html>
